@@ -1,0 +1,128 @@
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+import time
+from selenium.webdriver.support.ui import Select
+import math
+
+
+#def calc(x):
+#  return str(math.log(abs(12*math.sin(int(x)))))
+
+
+link = "http://suninjuly.github.io/selects1.html"
+
+try:
+    browser = webdriver.Chrome()
+    browser.get(link)
+    # Выбираем input злеметы для ввода данных
+    x_element = browser.find_element(By.ID, "num1").text
+    y_element = browser.find_element(By.ID, "num2").text
+    answer = int(x_element)+int(y_element)
+
+    select = Select(browser.find_element(By.TAG_NAME, "select"))
+
+    select.select_by_value(str(answer))
+
+    browser.find_element(By.TAG_NAME, "button").click()
+    # Проверяем, что смогли зарегистрироваться
+    # ждем загрузки страницы
+    time.sleep(1)
+
+
+finally:
+    # успеваем скопировать код за 30 секунд
+    time.sleep(10)
+    # закрываем браузер после всех манипуляций
+    browser.quit()
+
+# не забываем оставить пустую строку в конце файла
+
+
+
+
+
+
+
+
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+import time
+from selenium.webdriver.support.ui import Select
+import math
+import os
+
+
+#def calc(x):
+#  return str(math.log(abs(12*math.sin(int(x)))))
+
+
+try:
+    browser = webdriver.Chrome()
+    link = "http://suninjuly.github.io/file_input.html"
+    browser.get(link)
+
+    browser.find_element(By.NAME, "firstname").send_keys("999")
+    browser.find_element(By.NAME, "lastname").send_keys("999")
+    browser.find_element(By.NAME, "email").send_keys("999")
+
+    attach = browser.find_element(By.ID, "file")
+    directory = os.path.dirname(__file__)
+    filename = "999.txt"
+    full_file_path = os.path.join(directory, filename)
+    attach.send_keys(full_file_path)
+
+    button = browser.find_element(By.TAG_NAME, "button")
+    button.click()
+finally:
+    # успеваем скопировать код за 30 секунд
+    time.sleep(5)
+    # закрываем браузер после всех манипуляций
+    browser.quit()
+
+# не забываем оставить пустую строку в конце файла
+
+
+
+
+
+
+
+
+
+
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+import time
+from selenium.webdriver.support.ui import Select
+import math
+import os
+
+
+#def calc(x):
+#  return str(math.log(abs(12*math.sin(int(x)))))
+
+
+try:
+    browser = webdriver.Chrome()
+    link = "http://suninjuly.github.io/file_input.html"
+    browser.get(link)
+
+    browser.find_element(By.NAME, "firstname").send_keys("999")
+    browser.find_element(By.NAME, "lastname").send_keys("999")
+    browser.find_element(By.NAME, "email").send_keys("999")
+
+    attach = browser.find_element(By.ID, "file")
+    directory = os.path.dirname(__file__)
+    filename = "999.txt"
+    full_file_path = os.path.join(directory, filename)
+    attach.send_keys(full_file_path)
+
+    button = browser.find_element(By.TAG_NAME, "button")
+    button.click()
+finally:
+    # успеваем скопировать код за 30 секунд
+    time.sleep(5)
+    # закрываем браузер после всех манипуляций
+    browser.quit()
+
+# не забываем оставить пустую строку в конце файла
