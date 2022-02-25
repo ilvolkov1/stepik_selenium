@@ -3,4 +3,4 @@ auto test courses
 
 
 hello world!
-i am going to be an senior AQA, for sure!
+i am going to be a senior AQA, for sure!
